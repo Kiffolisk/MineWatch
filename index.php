@@ -4,20 +4,16 @@
     <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
-    <div class="topbar">
-        <img src="icon.png" alt="icon" class="icon">
-        <h1 class="textTop">MineWatch</h1>
-        <a class="textTopLnik" href="index.php"><b>Home</b></a>
-        <a class="textTopLnik" href="cams.php"><b>Cameras</b></a>
-        <a class="textTopLnik" href="guide.php"><b>Guide</b></a>
-    </div>
+    <?php
+        include "topbar.php";
+        add();
+    ?>
     <br>
     <div class="textBox">
         <h1 class="bigCenter">Welcome to MineWatch!</h1>
         <hr class="solid">
-        <p class="normalCenter">You've arrived at MineWatch, where you can watch Minecraft</p>
-        <p class="normalCenter">cameras from all over the Minecraft globe!</p>
-        <p class="normalCenter">No registration needed!</p>
+        <p class="normalCenter">You've arrived at MineWatch, where you can watch Minecraft cameras from all over the Minecraft globe!
+            No registration needed!</p>
         <br>
         <p class="normalCenter">Currently we have over 4,000 cameras live at the same time!</p>
         <br>
@@ -58,7 +54,7 @@
         <h1 class="bigCenter">Statistics</h1>
         <hr class="solid">
         <p class="normalCenter">Since 24th June 2022, we've had a camera total of...</p>
-        <p class="normalCenter" id="totalCount"><!--86,964-->0</p>Z
+        <p class="normalCenter" id="totalCount"><!--86,964-->0</p>
         <script>
             setInterval(function() {
                 var xhttp = new XMLHttpRequest();
