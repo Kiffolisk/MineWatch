@@ -81,6 +81,66 @@ app.get('/', function(req, res, next){
   res.redirect('index')
 });
 
+app.get('/req', function(req, res, next){
+  var fileName = "site/api.html"
+  /*res.sendFile("/assets/head.html", options, function (err) {
+    if (err) {
+      next(err)
+    } else {
+      console.log("Adding header")
+    }
+  })*/
+  console.log("-------------------------------\nGetting header")
+  headData = "";
+  express.static(path.join(__dirname, 'assets/head.html'))
+  fs.readFile('assets/head.html', function(err, data) {
+    if (err){
+      res.send(err);
+    }else{
+      headData = data;
+    }
+  });
+  express.static(path.join(__dirname, fileName))
+  fs.readFile(fileName, function(err, data) {
+    if (err){
+      res.send(err);
+    }else{
+      finalData = headData + data + "</body>";
+      res.send(finalData);
+    }
+  });
+});
+
+app.get('/req/', function(req, res, next){
+  var fileName = "site/api.html"
+  /*res.sendFile("/assets/head.html", options, function (err) {
+    if (err) {
+      next(err)
+    } else {
+      console.log("Adding header")
+    }
+  })*/
+  console.log("-------------------------------\nGetting header")
+  headData = "";
+  express.static(path.join(__dirname, 'assets/head.html'))
+  fs.readFile('assets/head.html', function(err, data) {
+    if (err){
+      res.send(err);
+    }else{
+      headData = data;
+    }
+  });
+  express.static(path.join(__dirname, fileName))
+  fs.readFile(fileName, function(err, data) {
+    if (err){
+      res.send(err);
+    }else{
+      finalData = headData + data + "</body>";
+      res.send(finalData);
+    }
+  });
+});
+
 app.get('/req/cameraCount', function(req, res, next){
   var fileName = "counts/cameras.txt"
   res.sendFile(fileName, options, function (err) {
