@@ -203,8 +203,13 @@ app.get('/cams', function(req, res, next){
       res.send(err);
     }else{
       finalData = headData + data + "</body>";
-      for (var i = 0; i < 10; i++){
-        finalData = finalData.replace("<!--randomID-->", "ID: " + nextInt(1,9999).toString());
+      for (var i = 0; i < 4; i++){
+        lol = "<div class=\"oCams\">"
+        for (var j = 0; j < 3; j++){
+          lol += "<table><tbody><tr><td><div class=\"camSpot\"><img class=\"literallyNothing\">" + "ID: " + nextInt(1,9999).toString() + "</div></td></tr></tbody></table>"
+        }
+        lol += "</div>";
+        finalData = finalData.replace("<!--cameraLine-->", lol);
       }
       res.send(finalData);
     }
