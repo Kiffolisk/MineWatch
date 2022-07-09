@@ -26,6 +26,13 @@ var options = {
   }
 }
 
+// thank you https://futurestud.io/
+function nextInt(min, max) {  
+  return Math.floor(
+    Math.random() * (max - min) + min
+  )
+}
+
 // app.use(express.static(path.join(__dirname, 'site')));
 app.use(express.static(path.join(__dirname, 'css')));
 app.use(express.static(path.join(__dirname, 'counts')));
@@ -183,6 +190,22 @@ app.get('/guide', function(req, res, next){
         }
       }
       finalData = finalData.replace("<!--guideTranscript-->", finalGuideData);
+      res.send(finalData);
+    }
+  });
+});
+
+app.get('/cams', function(req, res, next){
+  var fileName = "site/cameras.html"
+  express.static(path.join(__dirname, fileName))
+  fs.readFile(fileName, function(err, data) {
+    if (err){
+      res.send(err);
+    }else{
+      finalData = headData + data + "</body>";
+      for (var i = 0; i < 10; i++){
+        finalData = finalData.replace("<!--randomID-->", "ID: " + nextInt(1,9999).toString());
+      }
       res.send(finalData);
     }
   });
