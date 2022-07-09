@@ -1,0 +1,16 @@
+{
+  "name": "minewatch",
+  "version": "1.0.0",
+  "description": "A MineWatch recreation written in HTML, CSS and node.js (you might find some old php code)",
+  "main": "main.js",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
