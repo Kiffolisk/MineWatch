@@ -211,3 +211,4 @@ app.get('/guide', function(req, res, next){
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT)
+module.exports = app;
