@@ -32,6 +32,27 @@ app.use(express.static(path.join(__dirname, 'counts')));
 app.use(express.static(path.join(__dirname, 'assets')));
 app.use(express.static(path.join(__dirname, '/')));
 
+let headData = ""
+
+fs.readFile('assets/head.html', function(err, data) {
+  if (err){
+    headData = "Error loading header data!";
+  }else{
+    headData = data;
+  }
+});
+
+let guideData = ""
+
+fs.readFile('assets/guideTranscript.txt', function(err, data) {
+  if (err){
+    guideData = "";
+  }else{
+    guideData = data;
+    //console.log("set guide transcript to " + data)
+  }
+});
+
 app.get('/assets/:name', function(req, res, next){
   var fileName = "/assets/" + req.params.name;
   res.sendFile(fileName, options, function (err) {
@@ -57,15 +78,6 @@ app.get('/index', function(req, res, next){
     }
   })*/
   console.log("-------------------------------\nGetting header")
-  headData = "";
-  express.static(path.join(__dirname, 'assets/head.html'))
-  fs.readFile('assets/head.html', function(err, data) {
-    if (err){
-      res.send(err);
-    }else{
-      headData = data;
-    }
-  });
   express.static(path.join(__dirname, fileName))
   fs.readFile(fileName, function(err, data) {
     if (err){
@@ -91,15 +103,6 @@ app.get('/req', function(req, res, next){
     }
   })*/
   console.log("-------------------------------\nGetting header")
-  headData = "";
-  express.static(path.join(__dirname, 'assets/head.html'))
-  fs.readFile('assets/head.html', function(err, data) {
-    if (err){
-      res.send(err);
-    }else{
-      headData = data;
-    }
-  });
   express.static(path.join(__dirname, fileName))
   fs.readFile(fileName, function(err, data) {
     if (err){
@@ -121,15 +124,6 @@ app.get('/req/', function(req, res, next){
     }
   })*/
   console.log("-------------------------------\nGetting header")
-  headData = "";
-  express.static(path.join(__dirname, 'assets/head.html'))
-  fs.readFile('assets/head.html', function(err, data) {
-    if (err){
-      res.send(err);
-    }else{
-      headData = data;
-    }
-  });
   express.static(path.join(__dirname, fileName))
   fs.readFile(fileName, function(err, data) {
     if (err){
@@ -172,27 +166,6 @@ app.get('/guide', function(req, res, next){
       console.log("Adding header")
     }
   })*/
-  console.log("-------------------------------\nGetting header")
-  headData = "";
-  express.static(path.join(__dirname, 'assets/head.html'))
-  fs.readFile('assets/head.html', function(err, data) {
-    if (err){
-      res.send(err);
-    }else{
-      headData = data;
-    }
-  });
-  console.log("Getting guide.html transcript")
-  guideData = "";
-  express.static(path.join(__dirname, 'assets/guideTranscript.txt'))
-  fs.readFile('assets/guideTranscript.txt', function(err, data) {
-    if (err){
-      guideData = "";
-      console.log(err);
-    }else{
-      guideData = data;
-    }
-  });
   express.static(path.join(__dirname, fileName))
   fs.readFile(fileName, function(err, data) {
     if (err){
@@ -202,7 +175,14 @@ app.get('/guide', function(req, res, next){
       if (guideData == ""){
         guideData = "Failed to load guide transcript! This can be because your wifi's download speeds are low. Try connecting to a better network or try again. If that doesn't help either, it's probably a server problem and will be fixed soon.";
       }
-      finalData = finalData.replace("<!--guideTranscript-->", guideData);
+      finalGuideData = ""
+      splitData = guideData.toString().split("\n")
+      for (i = 0; i < splitData.length; i++) {
+        if (!splitData[i].startsWith("<")){
+          finalGuideData += "<p class=\"normalCenter\">" + splitData[i] + "</p>\n"
+        }
+      }
+      finalData = finalData.replace("<!--guideTranscript-->", finalGuideData);
       res.send(finalData);
     }
   });

@@ -33,20 +33,22 @@ body {
     font-family: 'trebuc';
     color: white;
     overflow:hidden;
+    text-align: center;
+    font-size: calc(0.66 * (1.5vh + 1.1vw));
 }
 
 .textTop {
     float: left;
-    font-size: 24px;
+    font-size: calc(1 * (1.5vh + 1.1vw));
 }
 
 .bigCenter {
-    font-size: 32px;
+    font-size: calc(1.75 * (1.5vh + 1.1vw));
     text-align: center;
 }
 
 .normalCenter {
-    font-size: 16px;
+    font-size: calc(0.66 * (1.5vh + 1.1vw));
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
 }

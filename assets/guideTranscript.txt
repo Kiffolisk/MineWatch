@@ -24,4 +24,5 @@ If you've chosen a Multiplayer camera, there may be more activity than in a Sing
 For now, you cannot interact with the chat in any way but to watch. You can refresh the statistics by refreshing the page or by choosing the same camera again.
 <br>
 This is all the essential information, and we hope this guide helped you, even if it was just minimally. For any more questions or concerns please e-mail us:
+<br>
 <a href="mailto://questions@minewatch.net">questions@minewatch.net</a>
