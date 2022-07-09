@@ -178,7 +178,7 @@ app.get('/guide', function(req, res, next){
       finalGuideData = ""
       splitData = guideData.toString().split("\n")
       for (i = 0; i < splitData.length; i++) {
-        if (!splitData[i].startsWith("<")){
+        if (!splitData[i].startsWith("<") || !splitData[i].startsWith("\t<")){
           finalGuideData += "<p class=\"normalCenter\">" + splitData[i] + "</p>\n"
         }
       }
