@@ -1,28 +1,16 @@
 If you're reading this, you're probably new here. This guide contains all essential information you need to know.
-<br>
 When you arrive at this site, you may see the <b>Home</b> page, which is the main section of the site when you arrive.
-<br>
 On the top you can see the header, which contains a welcoming title and hyperlinks to pages.
-<br>
 You are currently in the <b>"Guide"</b> section, which means you at least know how to navigate hyperlinks, because without that knowledge, you probably won't be here without help.
-<br>
 Click on the <b>"Cameras"</b> hyperlink. You can see a list of cameras. It is easy to watch them, just click on their specific button / image. The buttons also have the camera ID under them, which is sometimes useful, for example going back to the camera later.
-<br>
 Remember, if you cannot / don't want to pick, just click on the <b>"Random camera"</b> hyperlink.
-<br>
 Congratulations! You are now watching a camera. You can see:
-<br>
 <ul>
     <li><b>the statistics</b> (how long the camera was running before you started watching, the ID, and if it's running)</li>
     <li><b>the chat</b> (only if the camera is located in a Multiplayer game)
 </ul>
-<br>
 The main part is the camera feed itself. If no one is there, either go back to the <b>"Cameras"</b> hyperlink and choose another camera, or wait for any activity.
-<br>
 If you've chosen a Multiplayer camera, there may be more activity than in a Singleplayer camera. You can know if it's a Singleplayer camera if the chat says the player is not in Multiplayer.
-<br>
 For now, you cannot interact with the chat in any way but to watch. You can refresh the statistics by refreshing the page or by choosing the same camera again.
-<br>
 This is all the essential information, and we hope this guide helped you, even if it was just minimally. For any more questions or concerns please e-mail us:
-<br>
 <a href="mailto://questions@minewatch.net">questions@minewatch.net</a>
