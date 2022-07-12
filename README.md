@@ -1,5 +1,5 @@
 # MineWatch
-A MineWatch recreation written in HTML, PHP and CSS. Will probably switch to node.js once I learn it.
+A MineWatch recreation written in HTML, CSS and node.js.
 
 # How to use?
 There's no real way to use this. You can only check the pages because the camera functionality is still not implemented.
